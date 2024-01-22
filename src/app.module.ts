@@ -6,12 +6,11 @@ import { LanguageModule } from './language/language.module';
 import { ContactModule } from './contact/contact.module';
 import { ProjectsModule } from './projects/projects.module';
 import { ExperienceModule } from './experience/experience.module';
+import mongodbConfig from './mongodb.config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://gberi2012:1OHgbKre249Xc3qf@cluster0.a2bfzeu.mongodb.net/?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot(mongodbConfig.uri),
     LanguageModule,
     ContactModule,
     ProjectsModule,
