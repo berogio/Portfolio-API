@@ -10,7 +10,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         service: 'gmail',
         auth: {
           user: 'giorgi.beridze01e@geolab.edu.ge',
-          pass: 'Beridzeo1j',
+          pass: 'ylearginda?',
         },
       },
     }),
