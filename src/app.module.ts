@@ -8,6 +8,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { ExperienceModule } from './experience/experience.module';
 import { AboutModule } from './about/about.module';
 import { SkillsModule } from './skills/skills.module';
+import { NavigationModule } from './navigation/navigation.module';
 import mongodbConfig from './mongodb.config';
 
 @Module({
@@ -19,6 +20,7 @@ import mongodbConfig from './mongodb.config';
     ExperienceModule,
     AboutModule,
     SkillsModule,
+    NavigationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
