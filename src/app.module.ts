@@ -1,4 +1,3 @@
-import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -11,6 +10,7 @@ import { SkillsModule } from './skills/skills.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import mongodbConfig from './mongodb.config';
+import { Module } from '@nestjs/common';
 
 @Module({
   imports: [

@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { NavigationService } from './navigation.service';
 import { Navigation } from './navigation.schema';
 
@@ -7,7 +7,9 @@ export class NavigationController {
   constructor(private readonly navigationService: NavigationService) {}
 
   @Get()
-  async getAllNavigation(): Promise<Navigation[]> {
-    return this.navigationService.getAllNavigation();
+  async getAllNavigation(
+    @Query('language') language?: string,
+  ): Promise<Navigation[]> {
+    return this.navigationService.getAllNavigation(language);
   }
 }
