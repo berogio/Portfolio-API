@@ -7,10 +7,11 @@ import { Model } from 'mongoose';
 export class NavigationService {
   constructor(
     @InjectModel(Navigation.name)
-    private readonly NavigationModel: Model<Navigation>,
+    private readonly navigationModel: Model<Navigation>,
   ) {}
 
-  async getAllNavigation(): Promise<Navigation[]> {
-    return this.NavigationModel.find().exec();
+  async getAllNavigation(language?: string): Promise<Navigation[]> {
+    const query = language ? { language } : {};
+    return this.navigationModel.find(query).exec();
   }
 }

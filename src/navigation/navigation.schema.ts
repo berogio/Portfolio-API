@@ -4,10 +4,10 @@ import { Document } from 'mongoose';
 @Schema()
 export class Navigation extends Document {
   @Prop({ required: true })
-  name: string;
+  language: string;
 
-  @Prop()
-  proficiency: string;
+  @Prop({ required: true })
+  label: string;
 }
 
 export const NavigationSchema = SchemaFactory.createForClass(Navigation);
