@@ -4,6 +4,9 @@ import { Document } from 'mongoose';
 @Schema()
 export class PortfolioItem extends Document {
   @Prop({ required: true })
+  language: string;
+
+  @Prop({ required: true })
   greeting: string;
 
   @Prop({ required: true })

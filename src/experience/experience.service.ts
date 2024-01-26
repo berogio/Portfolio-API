@@ -10,7 +10,8 @@ export class ExperienceService {
     private readonly experienceModel: Model<Experience>,
   ) {}
 
-  async getAllExperiences(): Promise<Experience[]> {
-    return this.experienceModel.find().exec();
+  async getAllExperiences(language?: string): Promise<Experience[]> {
+    const query = language ? { language } : {};
+    return this.experienceModel.find(query).exec();
   }
 }

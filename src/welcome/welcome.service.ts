@@ -10,7 +10,8 @@ export class WelcomeService {
     private readonly portfolioItemModel: Model<PortfolioItem>,
   ) {}
 
-  async getWelcomeData(): Promise<PortfolioItem> {
-    return this.portfolioItemModel.findOne().exec();
+  async getWelcomeData(language?: string): Promise<PortfolioItem[]> {
+    const query = language ? { language } : {};
+    return this.portfolioItemModel.find(query).exec();
   }
 }
