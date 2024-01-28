@@ -10,7 +10,7 @@ export class Experience extends Document {
   position: string;
 
   @Prop({ required: true })
-  year: Date;
+  year: string;
 
   @Prop({ required: true })
   description: string;
