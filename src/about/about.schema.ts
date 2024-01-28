@@ -21,11 +21,14 @@ export class Card extends Document {
   @Prop({ required: true })
   additionalInfo2: string;
 
-  @Prop()
+  @Prop({ required: true })
   notice?: string;
 
-  @Prop()
+  @Prop({ required: true })
   website?: string;
+
+  @Prop({ required: true })
+  language: string;
 }
 
 export const CardSchema = SchemaFactory.createForClass(Card);

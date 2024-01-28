@@ -3,22 +3,22 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Project extends Document {
-  @Prop()
+  @Prop({ required: true })
   title: string;
 
-  @Prop()
+  @Prop({ required: true })
   description: string;
 
-  @Prop()
+  @Prop({ required: true })
   description2: string;
 
-  @Prop()
+  @Prop({ required: true })
   technologies: string[];
 
-  @Prop()
+  @Prop({ required: true })
   image: string;
 
-  @Prop()
+  @Prop({ required: true })
   liveDemoLink: string;
 }
 
