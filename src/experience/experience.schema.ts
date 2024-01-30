@@ -17,6 +17,9 @@ export class Experience extends Document {
 
   @Prop({ required: true })
   language: string;
+
+  @Prop({ required: true })
+  order: number;
 }
 
 export const ExperienceSchema = SchemaFactory.createForClass(Experience);

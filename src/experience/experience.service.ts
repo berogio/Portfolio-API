@@ -12,6 +12,6 @@ export class ExperienceService {
 
   async getAllExperiences(language?: string): Promise<Experience[]> {
     const query = language ? { language } : {};
-    return this.experienceModel.find(query).exec();
+    return this.experienceModel.find(query).sort('order').exec();
   }
 }
