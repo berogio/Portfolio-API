@@ -9,7 +9,8 @@ export class AboutService {
     @InjectModel(Card.name) private readonly cardModel: Model<Card>,
   ) {}
 
-  async getAllCards(): Promise<Card[]> {
-    return this.cardModel.find().exec();
+  async getAllCards(language?: string): Promise<Card[]> {
+    const query = language ? { language } : {};
+    return this.cardModel.find(query).exec();
   }
 }

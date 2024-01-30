@@ -3,14 +3,20 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Experience extends Document {
-  @Prop()
+  @Prop({ required: true })
+  logo: string;
+
+  @Prop({ required: true })
   position: string;
 
-  @Prop()
-  date: Date;
+  @Prop({ required: true })
+  year: string;
 
-  @Prop()
+  @Prop({ required: true })
   description: string;
+
+  @Prop({ required: true })
+  language: string;
 }
 
 export const ExperienceSchema = SchemaFactory.createForClass(Experience);

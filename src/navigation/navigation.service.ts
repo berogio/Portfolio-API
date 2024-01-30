@@ -12,6 +12,6 @@ export class NavigationService {
 
   async getAllNavigation(language?: string): Promise<Navigation[]> {
     const query = language ? { language } : {};
-    return this.navigationModel.find(query).exec();
+    return this.navigationModel.find(query).sort('order').exec();
   }
 }

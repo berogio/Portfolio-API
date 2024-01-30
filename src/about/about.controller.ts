@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AboutService } from './about.service';
 import { Card } from './about.schema';
 
@@ -7,7 +7,7 @@ export class AboutController {
   constructor(private readonly aboutService: AboutService) {}
 
   @Get()
-  async getAllCards(): Promise<Card[]> {
-    return this.aboutService.getAllCards();
+  async getAllCards(@Query('language') language?: string): Promise<Card[]> {
+    return this.aboutService.getAllCards(language);
   }
 }
