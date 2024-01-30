@@ -8,6 +8,9 @@ export class Navigation extends Document {
 
   @Prop({ required: true })
   label: string;
+
+  @Prop({ required: true })
+  order: number;
 }
 
 export const NavigationSchema = SchemaFactory.createForClass(Navigation);
