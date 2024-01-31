@@ -10,6 +10,6 @@ export class ProjectsService {
   ) {}
 
   async getAllProjects(): Promise<Project[]> {
-    return this.projectModel.find().exec();
+    return this.projectModel.find().sort('order').exec();
   }
 }
