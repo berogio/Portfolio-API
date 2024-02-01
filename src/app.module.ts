@@ -12,6 +12,7 @@ import { WelcomeModule } from './welcome/welcome.module';
 import mongodbConfig from './mongodb.config';
 import { Module } from '@nestjs/common';
 import { ResumeModule } from './resume/resume.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ResumeModule } from './resume/resume.module';
     NavigationModule,
     WelcomeModule,
     ResumeModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
