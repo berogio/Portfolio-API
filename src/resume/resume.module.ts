@@ -1,18 +1,14 @@
 import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt'; // Import JwtModule
+import { JwtModule } from '@nestjs/jwt';
 import { ResumeController } from './resume.controller';
-
-// Other imports...
 
 @Module({
   imports: [
-    // Other modules...
     JwtModule.register({
-      secret: 'your_secret_key', // Replace with your actual secret key
+      secret: 'your_secret_key',
       signOptions: { expiresIn: '1h' },
     }),
   ],
-  controllers: [ResumeController], // Include ResumeController in the controllers array
-  // Other configurations...
+  controllers: [ResumeController],
 })
 export class ResumeModule {}
