@@ -17,7 +17,6 @@ export class ResumeController {
       res.setHeader('Content-Type', 'application/pdf');
       res.sendFile(filePath);
     } catch (error) {
-      console.error(error);
       res.status(500).send('Internal Server Error');
     }
   }
@@ -29,15 +28,11 @@ export class ResumeController {
       const password = inputData?.password;
       if (password === '12345') {
         const token = this.jwtService.sign({ password: password });
-        console.log(
-          'Received POST request with correct password. Token generated.',
-        );
         res.status(200).json({ token: token });
       } else {
         res.status(401).json({ message: 'Unauthorized: Incorrect password' });
       }
     } catch (error) {
-      console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
     }
   }
