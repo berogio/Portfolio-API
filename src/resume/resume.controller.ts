@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { join } from 'path';
 import { JwtService } from '@nestjs/jwt';
 import { JwtAuthGuard } from 'src/auth/jwt.guard';
+import { createReadStream } from 'fs';
 
 @Controller('resume')
 export class ResumeController {
@@ -15,8 +16,15 @@ export class ResumeController {
       const currentDir = process.cwd();
       const filePath = join(currentDir, 'public', 'example.pdf');
       res.setHeader('Content-Type', 'application/pdf');
-      res.sendFile(filePath);
+      res.setHeader('Content-Disposition', 'inline; filename=example.pdf');
+      const stream = createReadStream(filePath);
+      stream.on('error', (error) => {
+        console.error('Error streaming PDF file:', error);
+        res.status(500).send('Internal Server Error');
+      });
+      stream.pipe(res);
     } catch (error) {
+      console.error('Error in getResume:', error);
       res.status(500).send('Internal Server Error');
     }
   }
