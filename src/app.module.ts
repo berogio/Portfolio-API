@@ -11,6 +11,7 @@ import { NavigationModule } from './navigation/navigation.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import mongodbConfig from './mongodb.config';
 import { Module } from '@nestjs/common';
+import { ResumeModule } from './resume/resume.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { Module } from '@nestjs/common';
     SkillsModule,
     NavigationModule,
     WelcomeModule,
+    ResumeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
