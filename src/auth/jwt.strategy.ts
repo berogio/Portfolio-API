@@ -13,7 +13,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: any) {
-    // Hier können Sie die Token-Payload validieren
     return { password: payload.password };
   }
 }
